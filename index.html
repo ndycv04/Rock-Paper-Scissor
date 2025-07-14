@@ -2,50 +2,9 @@
 <html>
   <head>
     <title>Rock-Paper-Scissor</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <script>
-        humanScore = 0;
-        computerScore = 0;
-
-        for (i = 0; i<5; i++){
-            function getComputerChoice(){
-                const choices = ["Rock", "Paper", "Scissor"];
-                const random = Math.floor(Math.random() * choices.length); 
-                console.log("Computer choice: " + choices[random]);
-                return choices[random];
-            }
-
-            function getHumanChoice(){
-                let human = prompt("Enter Rock, Paper, or Scissor: ")
-                human = human.trim().toLocaleLowerCase();
-                human = human.charAt(0).toUpperCase() + human.slice(1); // Capitalize the first letter
-                console.log("Human choice: " + human);
-                return human;
-            }
-        
-            const humanChoice = getHumanChoice();
-            const computerChoice = getComputerChoice();
-
-
-            function playRound(humanChoice,computerChoice){
-                if (humanChoice === "Rock" && computerChoice === "Scissor" || humanChoice === "Scissor" && computerChoice === "Paper" || humanChoice === "Paper" && computerChoice === "Rock"){
-                    console.log("Human wins this round!");
-                    humanScore++;
-                }
-                else if (computerChoice === "Rock" && humanChoice === "Scissor" || computerChoice === "Scissor" && humanChoice === "Paper" || computerChoice === "Paper" && humanChoice === "Rock"){
-                    console.log("Computer wins this round!");
-                    computerScore++;
-                }
-                else{
-                    console.log("It's a tie!");
-                }
-            }
-            playRound(humanChoice, computerChoice);
-        }
-
-        console.log("Final score: Human: " + humanScore + ", Computer: " + computerScore);
-        
-    </script>
+    <div id="container"></div>
   </body>
 </html>
